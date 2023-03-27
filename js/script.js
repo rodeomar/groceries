@@ -5,15 +5,19 @@ function userInput(e) {
     const inputsArray = Array.from(inputs);
     inputsArray.forEach(function(item){
         const paragraph = document.createElement("p");
-        paragraph.append(item.value);
+        paragraph.append(item.value.toUpperCase());
         document.body.append(paragraph);
     })
-    console.log(inputsArray)
+    removeForm()
 }
 window.addEventListener("load", function(){
 document.querySelector("form").addEventListener("submit", userInput)
 });
 
+function removeForm() {
+    const form = document.querySelector("form");
+    form.remove()
+}
 
 
 
